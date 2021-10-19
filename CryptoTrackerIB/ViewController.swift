@@ -6,6 +6,9 @@
 //
 
 import UIKit
+//API Caller
+//UI to shower different cryptos
+//MVVM
 
 class ViewController: UIViewController {
 
