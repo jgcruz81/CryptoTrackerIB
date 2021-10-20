@@ -19,7 +19,7 @@ final class APICaller {
     
     public func getAllCryptoData (
         //completion handler
-        completion: @escaping (Result<[String], Error>) -> Void
+        completion: @escaping (Result<[Crypto], Error>) -> Void
     ) {
         guard let url = URL(string: Constants.assetsEndpoint + "?apikey=" + Constants.apiKey) else {
             return
@@ -32,6 +32,9 @@ final class APICaller {
             
             do {
                 //decode response
+                let cryptos = try JSONDecoder().decode([Crypto].self, from: data)
+                
+                completion(.success(cryptos))
             }
             catch{
                 //completetion, hand back error
