@@ -8,7 +8,7 @@
 import Foundation
 
 final class APICaller {
-    static let shared = APICaller();
+    static let shared = APICaller()
     
     private struct Constants {
         static let apiKey = "4B4A5839-85AC-414F-B09F-0F2B4B5F81A4"
@@ -33,7 +33,8 @@ final class APICaller {
             do {
                 //decode response
             }
-            cath{
+            catch{
+                //completetion, hand back error
                 completion(.failure(error))
             }
         }
